@@ -37,7 +37,7 @@ CREATE TABLE ItemType (
     CONSTRAINT ItemTypePk PRIMARY KEY  (Id)
 );
 
-CREATE TABLE Location (
+CREATE TABLE "Location" (
     Id uniqueidentifier  NOT NULL,
     "Name" varchar(255)  NOT NULL,
     "Description" text  NOT NULL,
