@@ -27,7 +27,7 @@ CREATE TABLE ItemRented (
     TimeFrom date  NOT NULL,
     TimeTo date  NOT NULL,
     PriceTotal decimal(8,2)  NOT NULL,
-    CONSTRAINT ItemRented_pk PRIMARY KEY  (Id)
+    CONSTRAINT ItemRentedPk PRIMARY KEY  (Id)
 );
 
 CREATE TABLE ItemType (
