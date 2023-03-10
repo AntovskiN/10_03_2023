@@ -15,7 +15,6 @@ CREATE TABLE Item (
     ItemLocation text  NOT NULL,
     "Description" text  NOT NULL,
     Price decimal(8,2)  NOT NULL,
-    UnitId uniqueidentifier  NOT NULL,
     Available bit  NOT NULL,
     CONSTRAINT ItemPk PRIMARY KEY  (Id)
 );
@@ -43,13 +42,6 @@ CREATE TABLE "Location" (
     "Description" text  NOT NULL,
     CountryId uniqueidentifier  NOT NULL,
     CONSTRAINT LocationPk PRIMARY KEY  (Id)
-);
-
-CREATE TABLE Unit (
-    Id uniqueidentifier  NOT NULL,
-    UnitName varchar(64)  NOT NULL,
-    CONSTRAINT UnitAk1 UNIQUE (UnitName),
-    CONSTRAINT UnitPk PRIMARY KEY  (Id)
 );
 
 CREATE TABLE "User" (
@@ -91,10 +83,6 @@ ALTER TABLE ItemRented ADD CONSTRAINT ItemRented_Item
 ALTER TABLE ItemRented ADD CONSTRAINT ItemRented_UserAccount
     FOREIGN KEY (RenterId)
     REFERENCES UserAccount (Id);
-
-ALTER TABLE Item ADD CONSTRAINT Item_Unit
-    FOREIGN KEY (UnitId)
-    REFERENCES Unit (Id);
 
 ALTER TABLE "Location" ADD CONSTRAINT Location_Country
     FOREIGN KEY (CountryId)
