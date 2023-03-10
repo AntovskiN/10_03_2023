@@ -21,7 +21,7 @@ INSERT INTO "Location" VALUES
 (newid(), 'Brno', 'Brnenska 15', (SELECT "Id" FROM "Country" WHERE "Name"='Czech republic')),
 (newid(), 'Praha', 'Prazska 7', (SELECT "Id" FROM "Country" WHERE "Name"='Czech republic'));
 
-INSERT INTO Item VALUES
+INSERT INTO Item (Id, ItemName, ItemTypeId, LocationId, ItemLocation, "Description", Price, Available) VALUES
 (newid(), 'Ibanez RG421EX', (SELECT "Id" FROM "ItemType" WHERE "TypeName" = 'Electric Guitar'), 
 (SELECT "Id" FROM "Location" WHERE "Name" = 'Osijek'), (SELECT "Description" FROM "Location" WHERE "Name" = 'Osijek'), 
 '4/5 condition', '50.20', '0'),
